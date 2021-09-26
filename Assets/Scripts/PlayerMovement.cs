@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
         Debug.Log("Start");
@@ -67,6 +67,13 @@ public class PlayerMovement : MonoBehaviour
             if (verticalMovement > 0.5f && isGrounded())
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                anim.SetBool("isSlide", false);
+                //jumpableSoundEffect.Play();
+            }
+            if (verticalMovement < 0f && isGrounded())
+            {
+                //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                anim.SetBool("isSlide", true);
                 //jumpableSoundEffect.Play();
             }
         }
