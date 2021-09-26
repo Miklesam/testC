@@ -45,8 +45,8 @@ public static class GameDataLocalStorage
         if (File.Exists(destination)) file = File.OpenRead(destination);
         else
         {
-            Debug.LogError("File not found");
-            return new GameData(0, true);
+            data = new GameData(0, true);
+            return data;
         }
 
         BinaryFormatter bf = new BinaryFormatter();

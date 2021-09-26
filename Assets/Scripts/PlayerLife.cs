@@ -19,12 +19,14 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             RestartLevel();
-            //Die();
+            Die();
         }
     }
 
     private void Die()
     {
+        ScoreManager.finishScore();
+        SceneManager.LoadScene("MenuScene");
         //anim.SetTrigger("death");
         rb.bodyType = RigidbodyType2D.Static;
         dyingSoundEffect.Play();
