@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E7E55745-8471-E789-103A-EF907C01384F}</ProjectGuid>
+    <ProjectGuid>{60D1F859-8730-A321-35F1-C6B4A1DCE243}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,6 +65,7 @@
     <Compile Include="Assets/Scripts/SectionSpawner.cs" />
     <Compile Include="Assets/Scripts/Collectable.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
+    <Compile Include="Assets/PlayerSlide.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
