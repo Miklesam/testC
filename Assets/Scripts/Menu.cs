@@ -9,8 +9,9 @@ public class Menu : MonoBehaviour
     public Button musicOnOff;
     public Button play;
     public Text musicText;
+    public Text scoreText;
 
-    public static Boolean musicOn = true;
+    public Boolean musicOn;
 
     private string sceneForPlay = "SampleScene";
     
@@ -18,18 +19,25 @@ public class Menu : MonoBehaviour
     {
         play.onClick.AddListener(PlayClick);
         musicOnOff.onClick.AddListener(MusicClick);
+        int score = ScoreManager.bestScore;
+        
+        scoreText.text = "best score:"+ ScoreManager.bestScore;
+        
+        musicOn = GameDataLocalStorage.LoadData().musicOn;
+        musicText.text = musicOn ? "" : "OFF";
     }
 
     private void MusicClick()
     {
         musicOn = !musicOn;
         musicText.text = musicOn ? "" : "OFF";
+        GameDataLocalStorage.SaveMusic(musicOn);
     }
 
     private void PlayClick()
     {
-        SceneManager.LoadScene(sceneForPlay);
         ScoreManager.StartScore();
+        SceneManager.LoadScene(sceneForPlay);
     }
 
 }
