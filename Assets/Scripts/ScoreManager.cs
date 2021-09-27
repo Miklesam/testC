@@ -1,16 +1,20 @@
 using System.Threading;
-using System.Timers;
 using UnityEngine;
 
 public static class ScoreManager
 {
-    private static int currentScore = 0;
-    private static int bestScore = -1;
-    private static bool terminateCount = false;
-
+    static ScoreManager()
+    {
+        bestScore = GameDataLocalStorage.LoadData().score;
+    }
+    
+    private static int currentScore;
+    public static int bestScore;
+    private static bool terminateCount;
 
     public static void StartScore()
     {
+        terminateCount = false;
         Thread thread = new Thread(IncrementScore);
         thread.Start();
     }
@@ -21,8 +25,8 @@ public static class ScoreManager
         if (bestScore < currentScore)
         {
             bestScore = currentScore;
+            GameDataLocalStorage.SaveScore(bestScore);
         }
-
         currentScore = 0;
     }
 
@@ -36,13 +40,14 @@ public static class ScoreManager
         return bestScore;
     }
 
-    static void  IncrementScore()
+    static void IncrementScore()
     {
+        Debug.Log("aloha2" + currentScore);
+
         while (!terminateCount)
         {
-            Thread.Sleep(5000);
+            Thread.Sleep(100);
             currentScore++;
-            Debug.Log(currentScore);
         }
     }
 }
