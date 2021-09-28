@@ -5,21 +5,23 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    private static bool showBlood;
     
     public Button musicOnOff;
     public Button play;
     public Text musicText;
     public Text scoreText;
-
     public Boolean musicOn;
+    public GameObject blood;
 
-    private string sceneForPlay = "SampleScene";
+    private string sceneForPlay = "RightToLeft";
     
     private void Start()
     {
+        blood.SetActive(showBlood);
+        showBlood = true;
         play.onClick.AddListener(PlayClick);
         musicOnOff.onClick.AddListener(MusicClick);
-        int score = ScoreManager.bestScore;
         
         scoreText.text = "best score:"+ ScoreManager.bestScore;
         

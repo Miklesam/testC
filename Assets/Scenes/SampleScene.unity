@@ -35811,6 +35811,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!231 &602465128
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602465120}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 16.907103
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1001 &706403698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37947,6 +37967,14 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8856366561506170329, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856366561506170329, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856366561506170329, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.9
       objectReference: {fileID: 0}
@@ -37987,9 +38015,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8856366561506170330, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856366561506170330, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856366561506170330, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -6367560908665664636, guid: d348dff3819df794186a80cb95777629, type: 3}
+    - target: {fileID: 8856366561506170330, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856366561506170330, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8856366561506170331, guid: 8a3318b9ed6d5458780ce5adeb8649bf, type: 3}
       propertyPath: m_Constraints
       value: 4
