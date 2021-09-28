@@ -35834,6 +35834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e5375337cd54174814b1b23bdcbc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 9010046143743138386, guid: d1f69ef2cf8974ec29b6c2e724d4eb07, type: 3}
   dyingSoundEffect: {fileID: 0}
 --- !u!95 &602465127
 Animator:
