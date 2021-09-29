@@ -4,15 +4,19 @@ using UnityEngine;
 public class SectionSpawner : MonoBehaviour
 {
     public GameObject currentSection;
-    public GameObject barrier;
-    public float yOfBarrier;
+    public GameObject trapBox;
+    public GameObject trap2Box;
+    public GameObject trapAir;
+    public GameObject portal;
     private GameObject prevSection;
+    public float yOfObj;
 
+    private int countSpawned = 0;
     private float sectionWidth;
     private bool spawnSection = true;
-    private int barriersSize = 3;
-    private List<GameObject> currentBarriers = new List<GameObject>();
-    private List<GameObject> prevBarriers = new List<GameObject>();
+    private int barriersSize = 1;
+    private List<GameObject> currentSectionObjects = new List<GameObject>();
+    private List<GameObject> prevSectionObjects = new List<GameObject>();
 
     void Start()
     {
@@ -24,8 +28,8 @@ public class SectionSpawner : MonoBehaviour
     {
         if (prevSection != null && transform.position.x > prevSection.transform.position.x + sectionWidth)
         {
-            if (prevBarriers.Count > 0)
-                foreach (var obj in prevBarriers)
+            if (prevSectionObjects.Count > 0)
+                foreach (var obj in prevSectionObjects)
                 {
                     Destroy(obj);
                 }
@@ -38,7 +42,7 @@ public class SectionSpawner : MonoBehaviour
         {
             spawnSection = false;
 
-            prevBarriers = currentBarriers;
+            prevSectionObjects = currentSectionObjects;
             prevSection = currentSection;
 
             currentSection = Instantiate(prevSection, prevSection.transform.parent);
@@ -48,25 +52,51 @@ public class SectionSpawner : MonoBehaviour
 
             currentSection.transform.position = nextSectionX;
 
-            SpawnBarriers(barriersSize);
+            SpawnObjects(barriersSize);
         }
     }
 
-    private void SpawnBarriers(int size)
+    private void SpawnObjects(int size)
     {
         float nextSectionStartX = currentSection.transform.position.x - (sectionWidth / 2);
         float xRandomItemWidth = sectionWidth / size;
 
-        currentBarriers = new List<GameObject>();
+        currentSectionObjects = new List<GameObject>();
 
+        bool poratalSpawned = false;
         for (int i = 0; i < size; i++)
         {
-            int randomNewSectionX = Random.Range((int) nextSectionStartX, (int) (nextSectionStartX += xRandomItemWidth));
-            GameObject createdBarrier = Instantiate(barrier);
+            if (poratalSpawned)
+            {
+                break;
+            }
+            
+            int randomNewSectionX =
+                Random.Range((int) nextSectionStartX, (int) (nextSectionStartX += xRandomItemWidth));
 
-            currentBarriers.Add(createdBarrier);
+            GameObject spawnObject;
+            var objectType = Random.Range(0, 7);
+            Debug.Log(objectType);
+            Debug.Log("countSpawned" + countSpawned);
 
-            createdBarrier.transform.position = new Vector3(randomNewSectionX, yOfBarrier);
+            if (countSpawned > 6)
+            {
+                spawnObject = Instantiate(portal);
+                poratalSpawned = true;
+            }
+            else if (objectType < 2)
+                spawnObject = Instantiate(trapBox);
+            else if (objectType < 3)
+                spawnObject = Instantiate(trap2Box);
+            else if (objectType < 4)
+                spawnObject = Instantiate(trapAir);
+            else 
+                spawnObject = Instantiate(trapBox);
+
+            currentSectionObjects.Add(spawnObject);
+            spawnObject.transform.position = new Vector3(randomNewSectionX, yOfObj);
+
+            countSpawned += 1;
         }
     }
 }
