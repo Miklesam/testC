@@ -60,10 +60,6 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, -jumpForce);
                 anim.SetBool("isSlide", false);
             }
-            if (verticalMovement > 0.5f && isGroundedUp())
-            { 
-                anim.SetBool("isSlide", true);
-            }
         }
         else
         {
@@ -71,12 +67,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 anim.SetBool("isSlide", false);
-                //jumpableSoundEffect.Play();
-            }
-            if (verticalMovement < 0f && isGrounded())
-            {
-                //rb.velocity = new Vector2(rb.velocity.x, -jumpForce);
-                //anim.SetBool("isSlide", true);
             }
         }
         

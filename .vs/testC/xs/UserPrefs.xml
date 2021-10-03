@@ -5,7 +5,7 @@
       <File FileName="Assets/Scripts/TerrainSpawner.cs" Line="41" Column="1" />
       <File FileName="Assets/Scripts/Spawner.cs" Line="39" Column="31" />
       <File FileName="Assets/Scripts/PlayerMovement.cs" Line="107" Column="6" />
-      <File FileName="Assets/Scripts/PlayerSlide.cs" Line="60" Column="46" />
+      <File FileName="Assets/Scripts/PlayerSlide.cs" Line="41" Column="38" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
