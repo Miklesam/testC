@@ -13,15 +13,24 @@ public class PlayerSlide : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     public bool isSliding = false;
-
+    public bool reverse = false;
     private void Update()
     {
         float verticalMovement = Input.GetAxisRaw("Vertical");
-        if (verticalMovement < 0f && isGrounded())
+        if (reverse)
         {
-            performSlide();
+            if (verticalMovement > 0.5f && isGroundedUp())
+            {
+                performSlide();
+            }
         }
-
+        else
+        {
+            if (verticalMovement < 0f && isGrounded())
+            {
+                performSlide();
+            }
+        }
     }
 
     private void performSlide()
@@ -45,6 +54,10 @@ public class PlayerSlide : MonoBehaviour
     private bool isGrounded()
     {
         return Physics2D.BoxCast(regullarColl.bounds.center, regullarColl.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+    private bool isGroundedUp()
+    {
+        return Physics2D.BoxCast(regullarColl.bounds.center, regullarColl.bounds.size, 0f, Vector2.up, .1f, jumpableGround);
     }
 
 }

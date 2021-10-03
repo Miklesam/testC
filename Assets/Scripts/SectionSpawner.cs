@@ -21,6 +21,8 @@ public class SectionSpawner : MonoBehaviour
     void Start()
     {
         sectionWidth = currentSection.GetComponent<Renderer>().bounds.size.x;
+        Debug.Log("startsection");
+        Debug.Log(sectionWidth.ToString());
     }
 
 
@@ -59,7 +61,7 @@ public class SectionSpawner : MonoBehaviour
     private void SpawnObjects(int size)
     {
         float nextSectionStartX = currentSection.transform.position.x - (sectionWidth / 2);
-        float xRandomItemWidth = sectionWidth / size;
+        float xRandomItemWidth = sectionWidth / 2* size;
 
         currentSectionObjects = new List<GameObject>();
 
@@ -87,9 +89,9 @@ public class SectionSpawner : MonoBehaviour
             else if (objectType < 2)
                 spawnObject = Instantiate(trapBox);
             else if (objectType < 3)
-                spawnObject = Instantiate(trap2Box);
+                spawnObject = Instantiate(trapBox);
             else if (objectType < 4)
-                spawnObject = Instantiate(trapAir);
+                spawnObject = Instantiate(trapBox);
             else 
                 spawnObject = Instantiate(trapBox);
 

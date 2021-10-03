@@ -62,11 +62,13 @@
     <Compile Include="Assets/Scripts/Colliadable.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/PlayerLife.cs" />
+    <Compile Include="Assets/Scripts/PlayerSlide.cs" />
     <Compile Include="Assets/Scripts/Portal.cs" />
     <Compile Include="Assets/Scripts/SectionSpawner.cs" />
     <Compile Include="Assets/Scripts/Collectable.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
-    <Compile Include="Assets/Scripts/PlayerSlide.cs" />
+    <Compile Include="Assets/Scripts/TerrainSpawner.cs" />
+    <Compile Include="Assets/Scripts/Spawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Fonts/pizzadudedotdk.txt" />

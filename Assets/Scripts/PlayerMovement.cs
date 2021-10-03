@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
       
 
         UpdateAnimationState();
-
+       
     }
 
     private void UpdateAnimationState()
@@ -58,7 +58,11 @@ public class PlayerMovement : MonoBehaviour
             if (verticalMovement < 0f && isGroundedUp())
             {
                 rb.velocity = new Vector2(rb.velocity.x, -jumpForce);
-                //jumpableSoundEffect.Play();
+                anim.SetBool("isSlide", false);
+            }
+            if (verticalMovement > 0.5f && isGroundedUp())
+            { 
+                anim.SetBool("isSlide", true);
             }
         }
         else
@@ -72,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             if (verticalMovement < 0f && isGrounded())
             {
                 //rb.velocity = new Vector2(rb.velocity.x, -jumpForce);
-                anim.SetBool("isSlide", true);
+                //anim.SetBool("isSlide", true);
             }
         }
         

@@ -33,11 +33,11 @@ public class PlayerLife : MonoBehaviour
     {
         ScoreManager.finishScore();
         Instantiate(blood, transform);
-        
-        Invoke("LoadMenu", 0.3f);
+        RestartLevel();
+        //Invoke("LoadMenu", 0.3f);
         //anim.SetTrigger("death");
-        rb.bodyType = RigidbodyType2D.Static;
-        dyingSoundEffect.Play();
+        //rb.bodyType = RigidbodyType2D.Static;
+        //dyingSoundEffect.Play();
     }
 
     private void LoadMenu()
