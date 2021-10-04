@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     public GameObject coach;
     public GameObject portal;
     public float respawnTime = 1.0f;
-    private float respawnPortal = 15.0f;
+    private float respawnPortal = 4.0f;
     public GameObject player;
     private Vector2 screenBounds;
     private List<GameObject> allObjects = new List<GameObject>();
@@ -29,10 +29,10 @@ public class Spawner : MonoBehaviour
         int randY = Random.RandomRange(0, 2);
         if (reverse)
         {
-            a.transform.position = new Vector2(player.transform.position.x - screenBounds.x*2, startYPos + randY);
+            a.transform.position = new Vector2(player.transform.position.x - 3*screenBounds.x/4, startYPos + randY);
         }
         else {
-            a.transform.position = new Vector2(player.transform.position.x + screenBounds.x, startYPos + randY);
+            a.transform.position = new Vector2(player.transform.position.x + screenBounds.x/2, startYPos + randY);
         }
         allObjects.Add(a);
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : Collectable
 {
@@ -12,8 +13,12 @@ public class Portal : Collectable
         if (coll.name == "player")
         {
             //GameManager.instance.SaveState();
+            Scene scene = SceneManager.GetActiveScene();
+            List<string> tmp = new List<string>(sceneNames);
+            tmp.Remove(scene.name);
+            sceneNames = tmp.ToArray();
             string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName);
 
         }
         base.OnCollide(coll);
