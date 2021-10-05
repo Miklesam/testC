@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -8,15 +9,16 @@ public class PlayerLife : MonoBehaviour
 {
     [SerializeField] private GameObject blood;
 
-    //private Animator anim;
+    private Animator anim;
     private Rigidbody2D rb;
 
-    [SerializeField] private AudioSource dyingSoundEffect;
+    private AudioSource dyingSoundEffect;
 
     // Start is called  the first frame update 
     private void Start()
     {
-        //anim = GetComponent<Animator>();
+        dyingSoundEffect = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -33,11 +35,15 @@ public class PlayerLife : MonoBehaviour
     {
         ScoreManager.finishScore();
         Instantiate(blood, transform);
-        RestartLevel();
-        //Invoke("LoadMenu", 0.3f);
-        //anim.SetTrigger("death");
-        //rb.bodyType = RigidbodyType2D.Static;
-        //dyingSoundEffect.Play();
+        // RestartLevel();
+        anim.SetTrigger("death");
+        rb.bodyType = RigidbodyType2D.Static;
+        
+        if (GameDataLocalStorage.LoadData().musicOn)
+        {
+            dyingSoundEffect.Play();   
+        }
+        Invoke("LoadMenu", 1f);
     }
 
     private void LoadMenu()

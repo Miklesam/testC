@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public static float moveSpeedInc = 1f;
+    
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D coll;
@@ -36,11 +37,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (reverseRun)
         {
-            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(-moveSpeed * moveSpeedInc, rb.velocity.y);
         }
         else
         {
-            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(moveSpeed * moveSpeedInc, rb.velocity.y);
         }
       
 
