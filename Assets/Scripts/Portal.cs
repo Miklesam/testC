@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +17,7 @@ public class Portal : Collectable
             tmp.Remove(scene.name);
             sceneNames = tmp.ToArray();
             string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
+            PlayerMovement.moveSpeedInc += 0.15f;
             SceneManager.LoadScene(sceneName);
 
         }
