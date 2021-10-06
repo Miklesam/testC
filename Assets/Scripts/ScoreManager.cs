@@ -42,8 +42,6 @@ public static class ScoreManager
 
     static void IncrementScore()
     {
-        Debug.Log("aloha2" + currentScore);
-
         while (!terminateCount)
         {
             Thread.Sleep(100);
