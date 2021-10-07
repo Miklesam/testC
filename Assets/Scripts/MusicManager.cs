@@ -1,12 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
+
+    private static AudioSource audioSource;
     void Start()
     {
-        Debug.Log(GameDataLocalStorage.LoadData().musicOn);
-        GetComponent<AudioSource>().mute = !GameDataLocalStorage.LoadData().musicOn;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.mute = !GameDataLocalStorage.LoadData().musicOn;
+    }
+
+    public static void StopPlay()
+    {
+        audioSource.Stop();
     }
 }

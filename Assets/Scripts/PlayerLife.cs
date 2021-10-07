@@ -13,6 +13,7 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
 
     private AudioSource dyingSoundEffect;
+    private static PlayerLife instance;
 
     // Start is called  the first frame update 
     private void Start()
@@ -20,6 +21,15 @@ public class PlayerLife : MonoBehaviour
         dyingSoundEffect = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Awake()
+    {
+        if (instance != null)
+            Destroy(instance.gameObject);
+        
+        instance = this;
+        DontDestroyOnLoad(this);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -41,6 +51,7 @@ public class PlayerLife : MonoBehaviour
         
         if (GameDataLocalStorage.LoadData().musicOn)
         {
+            MusicManager.StopPlay();
             dyingSoundEffect.Play();   
         }
         //Invoke("LoadMenu", 1f);

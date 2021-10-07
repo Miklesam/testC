@@ -20,6 +20,8 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        PlayerMovement.moveSpeedInc = 1f;
+        
         blood.SetActive(showBlood);
         showBlood = true;
         play.onClick.AddListener(PlayClick);
