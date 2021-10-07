@@ -45,7 +45,7 @@ public class PlayerLife : MonoBehaviour
     {
         ScoreManager.finishScore();
         Instantiate(blood, transform);
-        // RestartLevel();
+         // RestartLevel();
         anim.SetTrigger("death");
         rb.bodyType = RigidbodyType2D.Static;
         
