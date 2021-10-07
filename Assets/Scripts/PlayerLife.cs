@@ -45,7 +45,7 @@ public class PlayerLife : MonoBehaviour
     {
         ScoreManager.finishScore();
         Instantiate(blood, transform);
-         RestartLevel();
+         // RestartLevel();
         anim.SetTrigger("death");
         rb.bodyType = RigidbodyType2D.Static;
         
@@ -54,7 +54,7 @@ public class PlayerLife : MonoBehaviour
             MusicManager.StopPlay();
             dyingSoundEffect.Play();   
         }
-        //Invoke("LoadMenu", 1f);
+        Invoke("LoadMenu", 1f);
     }
 
     private void LoadMenu()

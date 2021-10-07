@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &95585100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 427693247258042159, guid: 3e44ebdb4607141d8a69d8a1bdf9ecd1, type: 3}
+  m_PrefabInstance: {fileID: 3201442240096112691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &95585101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95585100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daec6e103a37b42f38212369e6bdf470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &441084790
 GameObject:
   m_ObjectHideFlags: 0
@@ -35700,7 +35717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1341208109
 GameObject:
@@ -37303,7 +37320,7 @@ Transform:
   m_Children:
   - {fileID: 1341208110}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2036565814 stripped
 Transform:
@@ -37365,7 +37382,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7796183576222344200, guid: 3e44ebdb4607141d8a69d8a1bdf9ecd1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e44ebdb4607141d8a69d8a1bdf9ecd1, type: 3}
 --- !u!1001 &5539082823807110564
 PrefabInstance:
@@ -37392,7 +37410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539082825025587858, guid: 4ed167f1915e840889951d7091383f9b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5539082825025587858, guid: 4ed167f1915e840889951d7091383f9b, type: 3}
       propertyPath: m_LocalPosition.x
