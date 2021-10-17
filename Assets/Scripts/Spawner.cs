@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
         GameObject a = Instantiate(portal) as GameObject;
         if (reverse)
         {
-            a.transform.position = new Vector2(player.transform.position.x - screenBounds.x*2 + screenBounds.x, startYPos);
+            a.transform.position = new Vector2(player.transform.position.x - screenBounds.x, startYPos);
         }
         else
         {
@@ -64,7 +64,8 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(respawnTime);
+            float randRespawn = Random.RandomRange(0.7f, 1.4f);
+            yield return new WaitForSeconds(randRespawn);
             spawnCouch();
         }
     }
