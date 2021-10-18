@@ -52,7 +52,27 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimationState()
     {
         //MovementState state;
-        float verticalMovement = Input.GetAxisRaw("Vertical");
+        //float verticalMovement = Input.GetAxisRaw("Vertical");
+        float verticalMovement = 0;
+        if (Input.touchCount > 0) {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+            {
+                if (touch.deltaPosition.y > 0f)
+                {
+                    verticalMovement = 1f;
+                }
+                else
+                {
+                    verticalMovement = -1f;
+                }
+            }
+            
+            //Debug.Log("pos"+ touch.position.y.ToString());
+            //Debug.Log("end" + verticalEnd.ToString());
+            //Debug.Log("delta" + delta.ToString());
+            //Debug.Log("verticalMovement" + verticalMovement.ToString());
+        }
 
         if (reverse)
         {
@@ -70,32 +90,6 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("isSlide", false);
             }
         }
-        
-
-        //if (dirX > 0f)
-        //{
-        //    state = MovementState.running;
-        //    sprite.flipX = false;
-        //}
-        //else if (dirX < 0f)
-        //{
-        //    state = MovementState.running;
-        //    sprite.flipX = true;
-        //}
-        //else
-        //{
-        //    state = MovementState.idle;
-        //}
-
-        //if (rb.velocity.y > 0.1f)
-        //{
-        //    state = MovementState.jumping;
-        //}
-        //else if (rb.velocity.y < - 0.1f)
-        //{
-        //    state = MovementState.falling;
-        //}
-        //anim.SetInteger("state", (int)state);
     }
 
     private bool isGrounded() {

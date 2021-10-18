@@ -16,7 +16,28 @@ public class PlayerSlide : MonoBehaviour
     public bool reverse = false;
     private void Update()
     {
-        float verticalMovement = Input.GetAxisRaw("Vertical");
+        float verticalMovement = 0f;
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+            {
+                if (touch.deltaPosition.y > 0f)
+                {
+                    verticalMovement = 1f;
+                }
+                else
+                {
+                    verticalMovement = -1f;
+                }
+            }
+            Debug.Log("pos"+ touch.position.y.ToString());
+            //Debug.Log("end" + verticalEnd.ToString());
+            //Debug.Log("delta" + delta.ToString());
+            //Debug.Log("verticalMovement" + verticalMovement.ToString());
+        }
+
+        //float verticalMovement = Input.GetAxisRaw("Vertical");
         if (reverse)
         {
             if (verticalMovement > 0.5f && isGroundedUp())
