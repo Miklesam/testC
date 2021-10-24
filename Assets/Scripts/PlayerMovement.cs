@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public bool reverse = false;
     public bool reverseRun = false;
 
-    private enum MovementState { idle, running, jumping, falling}
+    private enum MovementState { running, jumping, falling}
+    private MovementState state = MovementState.running;
 
     // Start is called before the first frame update
     private void Start()
@@ -51,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimationState()
     {
+        state = MovementState.running;
+
         float verticalMovement = 0;
         if (Input.touchCount > 0)
         {
@@ -80,6 +83,17 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("isSlide", false);
             }
         }
+
+        if (rb.velocity.y > .1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if(rb.velocity.y < -.1f)
+        {
+            state = MovementState.falling;
+        }
+        anim.SetInteger("state", (int) state);
+
     }
 
     private bool isGrounded() {

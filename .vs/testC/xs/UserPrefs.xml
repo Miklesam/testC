@@ -1,10 +1,7 @@
 ﻿<Properties StartupConfiguration="{60D1F859-8730-A321-35F1-C6B4A1DCE243}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Spawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="55" Column="34" />
-      <File FileName="Assets/Scripts/Spawner.cs" Line="39" Column="13" />
-      <File FileName="Assets/Scripts/MusicManager.cs" />
-      <File FileName="Assets/Scripts/CameraController.cs" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="55" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +9,7 @@
           <Node name="testC" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Spawner.cs" selected="True" />
+                <Node name="PlayerMovement.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -22,7 +19,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="abb0409f-7ce8-4d72-b003-357d70907d5e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="18c4fa03-e252-4b84-9273-20d7368c0b54" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
