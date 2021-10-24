@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,9 +53,6 @@
     <UnityVersion>2020.3.20f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets/Scripts/ScoreManager.cs" />
     <Compile Include="Assets/Scripts/Menu.cs" />
     <Compile Include="Assets/Scripts/GameDataLocalStorage.cs" />
@@ -64,10 +61,8 @@
     <Compile Include="Assets/Scripts/TerrainSpawner.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
     <Compile Include="Assets/Scripts/PlayerLife.cs" />
-    <Compile Include="Assets/Scripts/PlayerSlide.cs" />
     <Compile Include="Assets/Scripts/Portal.cs" />
     <Compile Include="Assets/Scripts/MusicManager.cs" />
-    <Compile Include="Assets/Scripts/SectionSpawner.cs" />
     <Compile Include="Assets/Scripts/Collectable.cs" />
     <Compile Include="Assets/Scripts/CameraController.cs" />
   </ItemGroup>

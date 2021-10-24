@@ -39,10 +39,10 @@ public class Spawner : MonoBehaviour
             
         if (reverse)
         {
-            a.transform.position = new Vector2(player.transform.position.x - 2*screenBounds.x, startYPos + randY);
+            a.transform.position = new Vector2(player.transform.position.x - 2*screenBounds.x, startYPos -1);
         }
         else {
-            a.transform.position = new Vector2(player.transform.position.x + 2*screenBounds.x, startYPos + randY);
+            a.transform.position = new Vector2(player.transform.position.x + 2*screenBounds.x, startYPos -1);
         }
         allObjects.Add(a);
     }

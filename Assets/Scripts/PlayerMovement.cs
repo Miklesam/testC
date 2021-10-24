@@ -51,27 +51,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimationState()
     {
-        //MovementState state;
-        //float verticalMovement = Input.GetAxisRaw("Vertical");
         float verticalMovement = 0;
-        if (Input.touchCount > 0) {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved)
+        if (Input.touchCount > 0)
+        {
+            if (reverse)
             {
-                if (touch.deltaPosition.y > 0f)
-                {
-                    verticalMovement = 1f;
-                }
-                else
-                {
-                    verticalMovement = -1f;
-                }
+                verticalMovement = -1f;
             }
-            
-            //Debug.Log("pos"+ touch.position.y.ToString());
-            //Debug.Log("end" + verticalEnd.ToString());
-            //Debug.Log("delta" + delta.ToString());
-            //Debug.Log("verticalMovement" + verticalMovement.ToString());
+            else
+            {
+                verticalMovement = 1f;
+            }
         }
 
         if (reverse)
