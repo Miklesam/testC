@@ -14,6 +14,7 @@ public static class ScoreManager
 
     public static void StartScore()
     {
+        currentScore = 0;
         terminateCount = false;
         Thread thread = new Thread(IncrementScore);
         thread.Start();
@@ -27,7 +28,6 @@ public static class ScoreManager
             bestScore = currentScore;
             GameDataLocalStorage.SaveScore(bestScore);
         }
-        currentScore = 0;
     }
 
     public static int CurrentScore()

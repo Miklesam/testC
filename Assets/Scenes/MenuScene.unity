@@ -623,7 +623,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicOnOff: {fileID: 1408749291}
   play: {fileID: 1673454059}
-  company: {fileID: 0}
   musicText: {fileID: 1542301270}
   scoreText: {fileID: 29437867}
   musicOn: 0
