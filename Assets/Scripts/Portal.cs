@@ -21,9 +21,9 @@ public class Portal : Collectable
             // tmp.Remove(scene.name);
             // sceneNames = tmp.ToArray();
             // string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
-            // PlayerMovement.moveSpeedInc += 0.15f;
             // SceneManager.LoadScene(sceneName);
 
+            PlayerMovement.moveSpeedInc += 0.15f;
             var camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 
             camera.ResetWorldToCameraMatrix();

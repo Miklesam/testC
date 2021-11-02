@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
     public bool reverseGravity = false;
     private bool portalSpawned;
     private float secBeforePortal = 0;
-    private const float secForPortal = 5;
+    private const float secForPortal = 15;
 
     void Start()
     {
@@ -77,7 +77,7 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            float randRespawn = 3f; //Random.RandomRange(1.4f, 2.8f);
+            float randRespawn = 3f - PlayerMovement.moveSpeedInc; //Random.RandomRange(1.4f, 2.8f);
             secBeforePortal += randRespawn;
 
             yield return new WaitForSeconds(randRespawn);

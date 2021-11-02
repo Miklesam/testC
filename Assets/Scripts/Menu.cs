@@ -24,7 +24,7 @@ public class Menu : MonoBehaviour
         play.onClick.AddListener(PlayClick);
         musicOnOff.onClick.AddListener(MusicClick);
         
-        scoreText.text = "best score:"+ ScoreManager.bestScore;
+        scoreText.text = "best score: "+ ScoreManager.bestScore;
         
         musicOn = GameDataLocalStorage.LoadData().musicOn;
         musicText.text = musicOn ? "" : "OFF";
