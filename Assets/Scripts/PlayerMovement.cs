@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         state = MovementState.running;
 
         float verticalMovement = 0;
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
         {
             if (reverse)
             {

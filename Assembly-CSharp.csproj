@@ -58,13 +58,13 @@
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Colliadable.cs" />
      <Compile Include="Assets\Scripts\TerrainSpawner.cs" />
+     <Compile Include="Assets\Scripts\SceneScore.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerLife.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
      <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\Collectable.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\SceneScore.cs" />
      <None Include="Assets\Fonts\pizzadudedotdk.txt" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.20f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
