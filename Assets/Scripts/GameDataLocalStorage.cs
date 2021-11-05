@@ -39,7 +39,7 @@ public static class GameDataLocalStorage
             return data;
         }
 
-        string destination = Application.persistentDataPath + "/save.dat";
+        string destination = Application.persistentDataPath + "/save2.dat";
         FileStream file;
 
         if (File.Exists(destination)) file = File.OpenRead(destination);

@@ -10,5 +10,10 @@ public class SceneScore : MonoBehaviour
     void Update()
     {
         scoreText.text = ScoreManager.CurrentScore().ToString();
+
+        if (ScoreManager.BestScore() < ScoreManager.CurrentScore())
+        {
+            scoreText.color = Color.yellow;
+        }
     }
 }
