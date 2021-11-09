@@ -9,19 +9,21 @@ public class Menu : MonoBehaviour
     
     public Button musicOnOff;
     public Button play;
+    public Button about;
     public Text musicText;
     public Text scoreText;
     public Boolean musicOn;
     public GameObject blood;
 
     private string sceneForPlay = "SampleScene";
-    private string companyForStart = "SampleScene";
+    private string sceneForAbout = "AboutScene";
 
     private void Start()
     {
         blood.SetActive(showBlood);
         showBlood = true;
         play.onClick.AddListener(PlayClick);
+        about.onClick.AddListener(AboutClick);
         musicOnOff.onClick.AddListener(MusicClick);
         
         scoreText.text = "best score: "+ ScoreManager.bestScore;
@@ -42,6 +44,11 @@ public class Menu : MonoBehaviour
         PlayerMovement.moveSpeedInc = 0.5f;   
         ScoreManager.StartScore();
         SceneManager.LoadScene(sceneForPlay);
+    }
+
+    private void AboutClick()
+    {
+        SceneManager.LoadScene(sceneForAbout);
     }
 
 }
