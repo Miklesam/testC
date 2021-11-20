@@ -24,7 +24,7 @@ public class AboutManager : MonoBehaviour
 
     private void DiscordClick()
     {
-        string URL = "https://discord.gg/twKyPZDn";
+        string URL = "https://linktr.ee/OneLineGaming";
         Application.OpenURL(URL);
     }
 

@@ -138,7 +138,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.2
+  bundleVersion: 1.3
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -163,7 +163,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
-  AndroidBundleVersionCode: 3
+  AndroidBundleVersionCode: 4
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 31
   AndroidPreferredInstallLocation: 1
@@ -250,7 +250,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/admin/Desktop/video/portal_creds/user.keystore
+  AndroidKeystoreName: /Users/admin/Desktop/video/portal_runner/portal_creds/user.keystore
   AndroidKeyaliasName: portal_key
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
