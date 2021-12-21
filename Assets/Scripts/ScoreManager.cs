@@ -27,6 +27,7 @@ public static class ScoreManager
         {
             bestScore = currentScore;
             GameDataLocalStorage.SaveScore(bestScore);
+            Social.ReportScore(currentScore,GPGSIds.leaderboard_leaderboard, success => { });
         }
     }
 
