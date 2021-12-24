@@ -21,7 +21,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -1105,4 +1104,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/RightToLeft.unity
   - Assets/Scenes/UpToLeft.unity
   - Assets/Scenes/AboutScene.unity
-  playerPath: /Users/admin/Desktop/portal_release.aab
+  playerPath: /Users/admin/Desktop/portal.aab
