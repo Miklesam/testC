@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GooglePlayGames.BasicApi;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -22,8 +23,10 @@ public class Portal : Collectable
             // sceneNames = tmp.ToArray();
             // string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
             // SceneManager.LoadScene(sceneName);
-
-            PlayerMovement.moveSpeedInc += 0.15f;
+            if (PlayerMovement.moveSpeedInc < 1f)
+            {
+                PlayerMovement.moveSpeedInc += 0.15f;
+            }
             var camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
 
             camera.ResetWorldToCameraMatrix();

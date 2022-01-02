@@ -1104,4 +1104,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/RightToLeft.unity
   - Assets/Scenes/UpToLeft.unity
   - Assets/Scenes/AboutScene.unity
-  playerPath: /Users/admin/Desktop/portal.aab
+  playerPath: /Users/admin/Desktop/portal_release.aab

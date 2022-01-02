@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
    private void Update()
     {
         //dirX = Input.GetAxisRaw("Horizontal");
-
         if (reverseRun)
         {
             rb.velocity = new Vector2(-moveSpeed * moveSpeedInc, rb.velocity.y);
